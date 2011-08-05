@@ -14,8 +14,8 @@ Forex.Indicator = K.Base.subclass({
         });
         Forex.Indicator.requirementsToDefinition(o.requirements).forEach(function(definition){
             this.addIndicator(K.merge(definition, { 
-                  name:         el.name
-                , timeline:     this.timeline
+                //  name:         el.name
+                  timeline:     this.timeline
                 , parent:       this
             }));
         },this);
@@ -27,7 +27,7 @@ Forex.Indicator = K.Base.subclass({
         return this; 
     }
     , getObj: function(s){
-        if(!s || s=="price" || s=="data"){ return this.timeline.data; }
+        if(!s || s==="price" || s==="data"){ return this.timeline.data; }
         return this.getIndicator(s).data;
     }
     , getIndicator: function(s){
